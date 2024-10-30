@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centro Medico - Il tuo centro di fiducia</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="logo">Centro Medico</div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#chi-siamo">Chi Siamo</a></li>
+                    <li><a href="#servizi">Servizi</a></li>
+                    <li><a href="#prenotazioni">Prenotazioni</a></li>
+                    <li><a href="#contatti">Contatti</a></li>
+                </ul>
+            </nav>
+            <a href="#prenota" class="cta-button">Prenota Ora</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Il tuo centro di fiducia per fisioterapia e cure specialistiche</h1>
+            <p>Professionalità, esperienza e dedizione al servizio della tua salute</p><br>
+            <a href="#servizi" class="cta-button">Scopri i nostri servizi</a>
+        </div>
+    </section>
+
+    <!-- Punti di Forza -->
+    <section class="features">
+        <div class="features-grid">
+            <div class="feature-card">
+                <i class="fas fa-heartbeat"></i>
+                <h3>Fisioterapia</h3>
+                <p>Trattamenti personalizzati per il tuo benessere</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-user-md"></i>
+                <h3>Cardiologia</h3>
+                <p>Specialisti nel campo della salute cardiovascolare</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-bone"></i>
+                <h3>Ortopedia</h3>
+                <p>Cura e prevenzione dei disturbi muscoloscheletrici</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chi Siamo -->
+    <section class="about" id="chi-siamo">
+        <div class="mission">
+            <h2>La Nostra Mission</h2>
+            <p>Ci impegniamo ogni giorno per fornire cure di alta qualità, mettendo il paziente al centro di ogni nostro servizio.</p>
+        </div>
+        <div class="staff-grid">
+            <div class="staff-card">
+                <img src="dottore1.jpg" alt="Dott. Rossi">
+                <div class="staff-info">
+                    <h3>Dott. Mario Rossi</h3>
+                    <p>Specialista in Fisioterapia</p>
+                </div>
+            </div>
+            <div class="staff-card">
+                <img src="dottore1.jpg" alt="Dott.ssa Bianchi">
+                <div class="staff-info">
+                    <h3>Dott.ssa Anna Bianchi</h3>
+                    <p>Cardiologa</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Form Prenotazione -->
+    <section class="booking" id="prenota">
+        <div class="booking-form">
+            <h2>Prenota una Visita</h2>
+            <form id="appointmentForm">
+                <div class="form-group">
+                    <label for="name">Nome e Cognome</label>
+                    <input type="text" id="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="service">Servizio</label>
+                    <select id="service" required>
+                        <option value="">Seleziona un servizio</option>
+                        <option value="fisioterapia">Fisioterapia</option>
+                        <option value="cardiologia">Cardiologia</option>
+                        <option value="ortopedia">Ortopedia</option>
+                    </select>
+                </div>
+                <button type="submit" class="cta-button">Prenota Ora</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-links">
+                <h3>Collegamenti Rapidi</h3>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#chi-siamo">Chi Siamo</a></li>
+                    <li><a href="#servizi">Servizi</a></li>
+                    <li><a href="#prenotazioni">Prenotazioni</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h3>Contatti</h3>
+                <ul>
+                    <li>Tel: 123-456-789</li>
+                    <li>Email: info@centromedico.it</li>
+                    <li>Indirizzo: Via Roma 123, Milano</li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h3>Seguici</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Form submission handling
+        document.getElementById('appointmentForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Grazie per la tua prenotazione! Ti contatteremo presto.');
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 50) {
+                document.querySelector('header').style.background = 'rgba(255,255,255,0.95)';
+            } else {
+                document.querySelector('header').style.background = 'white';
+            }
+        });
+    </script>
+</body>
+</html>
